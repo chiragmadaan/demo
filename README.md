@@ -1,6 +1,6 @@
 # demo
 
-<H1>Demo Project for myBeepr</H1>
+<H1>Demo Project </H1>
 
 This project has been created to automate the Log In and Sign up functionality of an app called JioSaavn. This app is available on the app store. It is a music streaming platform.
 
