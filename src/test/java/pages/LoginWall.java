@@ -1,5 +1,6 @@
 package pages;
 
+import helpers.Util;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -28,40 +29,36 @@ public class LoginWall {
 	// Following are the methods to interact with the page
 	
 	public void tapLoginOption() {
-		driver.findElement(loginOption).click();
+		Util.element(loginOption, driver).click();
 	}
 	
 	public void tapLoginButton() {
-		driver.findElement(loginButton).click();
+		Util.element(loginButton, driver).click();
 	}
 	
 	public void tapSignupButton() {
-		driver.findElement(signupButton).click();
+		Util.element(signupButton, driver).click();
 	}
 	
 	public void tapCreateAccountButton() {
-		driver.findElement(createAccountButton).click();
+		Util.element(createAccountButton, driver).click();
 	}
 	
 	public void tapEmailButton() {
-		driver.findElement(emailButton).click();
+		Util.element(emailButton, driver).click();
 	}
 	
 	public void dismissSuggestions() {
 		try{
-			if(driver.findElement(closeButton).isDisplayed())
-				driver.findElement(closeButton).click();
-			System.out.println("close tapped");
+			if(Util.element(closeButton, driver).isDisplayed())
+				Util.element(closeButton, driver).click();
 		}catch(Exception e) {
-//			e.printStackTrace();
-			System.out.println(driver.getPageSource());
+			e.printStackTrace();
 		}
 	}
 	
 	public void enterLoginDetails(String email, String password) {
-		
-		driver.findElement(emailField).sendKeys(email);
-		driver.findElement(passwordField).sendKeys(password);
-		
+		Util.element(emailField, driver).sendKeys(email);
+		Util.element(passwordField, driver).sendKeys(password);
 	}
 }

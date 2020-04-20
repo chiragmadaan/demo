@@ -34,7 +34,6 @@ public class BaseClass {
 		loadProperties(properties);
 		
 		DesiredCapabilities cap = new DesiredCapabilities();
-		
 		cap.setCapability("deviceName", deviceName);
 		cap.setCapability("platformName", platformName);
 		cap.setCapability("platformVersion", platformVersion);

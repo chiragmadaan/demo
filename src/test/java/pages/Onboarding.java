@@ -1,6 +1,7 @@
 package pages;
 
 
+import helpers.Util;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -24,12 +25,12 @@ public class Onboarding {
 	// Following are the methods to interact with the page
 	
 	public void tapDone() {
-		driver.findElement(donebutton).click();
+		Util.element(donebutton, driver).click();
 	}
 	
 	public void acceptNotificationsAlert() {
 		try {
-			driver.findElement(allowbutton).click();
+			Util.element(allowbutton, driver).click();
 		}catch(Exception e) {
 			
 		}
@@ -37,7 +38,7 @@ public class Onboarding {
 	
 	public boolean isDisplayed() {
 		try {
-			return driver.findElement(languageVC).isDisplayed();
+			return Util.element(languageVC, driver).isDisplayed();
 		}catch(Exception e) {
 			return false;
 		}

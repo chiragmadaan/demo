@@ -1,5 +1,6 @@
 package pages;
 
+import helpers.Util;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -25,6 +26,6 @@ public class Homepage {
 	// Following are the methods to interact with the page
 	
 	public void goToProfilePage() {
-		driver.findElement(userTab).click();
+		Util.element(userTab, driver).click();
 	}
 }

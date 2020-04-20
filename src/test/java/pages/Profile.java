@@ -1,5 +1,6 @@
 package pages;
 
+import helpers.Util;
 import io.appium.java_client.AppiumDriver;
 import io.appium.java_client.MobileBy;
 import io.appium.java_client.MobileElement;
@@ -28,39 +29,35 @@ public class Profile {
 	// Following are the methods to interact with the page
 	
 	public void tapEmailOption() {
-		driver.findElement(emailOption).click();
+		Util.element(emailOption, driver).click();
 	}
 	
 	public void tapSignupOption() {
-		driver.findElement(signupOption).click();
+		Util.element(signupOption, driver).click();
 	}
 	
 	public void enterLoginDetails(String email, String password) {
-		
-		driver.findElement(emailTextField).sendKeys(email);
-		driver.findElement(passwordTextField).sendKeys(password);
-		
+		Util.element(emailTextField, driver).sendKeys(email);
+		Util.element(passwordTextField, driver).sendKeys(password);
 	}
 	
 	public void enterSignupDetails(String email, String password) {
-		
-		driver.findElement(emailTextField).sendKeys(email);
-		driver.findElement(passwordTextField).sendKeys(password);
-		driver.findElement(confirmPasswordTextField).sendKeys(password);
-		
+		Util.element(emailTextField, driver).sendKeys(email);
+		Util.element(passwordTextField, driver).sendKeys(password);
+		Util.element(confirmPasswordTextField, driver).sendKeys(password);
 	}
 	
 	public void tapLoginButton() {
-		driver.findElement(loginButton).click();
+		Util.element(loginButton, driver).click();
 	}
 	
 	public void tapSignupButton() {
-		driver.findElement(signupButton).click();
+		Util.element(signupButton, driver).click();
 	}
 	
 	public boolean isUserImageDisplayed() {
 		try {
-			return driver.findElement(userimage).isEnabled();
+			return Util.element(userimage, driver).isEnabled();
 		}catch(Exception e) {
 			return false;
 		}
