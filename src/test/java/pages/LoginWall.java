@@ -8,6 +8,9 @@ import io.appium.java_client.ios.IOSDriver;
 public class LoginWall {
 
 	IOSDriver<MobileElement> driver;
+	
+	//	setting up all the accessibility IDs of the page
+	
 	MobileBy createAccountButton = (MobileBy) MobileBy.AccessibilityId("Create an Account");
 	MobileBy loginOption = (MobileBy) MobileBy.AccessibilityId("Or Log In to an existing Saavn account");
 	MobileBy emailButton = (MobileBy) MobileBy.AccessibilityId("email");
@@ -20,6 +23,9 @@ public class LoginWall {
 	public LoginWall(AppiumDriver<MobileElement> driver) {
 		this.driver = (IOSDriver<MobileElement>) driver;
 	}
+	
+	
+	// Following are the methods to interact with the page
 	
 	public void tapLoginOption() {
 		driver.findElement(loginOption).click();

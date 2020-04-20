@@ -8,6 +8,9 @@ import io.appium.java_client.ios.IOSDriver;
 public class Profile {
 
 	IOSDriver<MobileElement> driver;
+	
+	//	setting up all the accessibility IDs of the page
+	
 	MobileBy emailOption = (MobileBy) MobileBy.AccessibilityId("use email");
 	MobileBy emailTextField = (MobileBy) MobileBy.AccessibilityId("email");
 	MobileBy passwordTextField = (MobileBy) MobileBy.AccessibilityId("password");
@@ -20,6 +23,9 @@ public class Profile {
 	public Profile(AppiumDriver<MobileElement> driver) {
 		this.driver = (IOSDriver<MobileElement>) driver;
 	}
+	
+	
+	// Following are the methods to interact with the page
 	
 	public void tapEmailOption() {
 		driver.findElement(emailOption).click();

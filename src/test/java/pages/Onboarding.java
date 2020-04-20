@@ -9,6 +9,9 @@ import io.appium.java_client.ios.IOSDriver;
 public class Onboarding {
 	
 	IOSDriver<MobileElement> driver;
+	
+	//	setting up all the accessibility IDs of the page
+	
 	MobileBy donebutton = (MobileBy) MobileBy.AccessibilityId("Done");
 	MobileBy allowbutton = (MobileBy) MobileBy.AccessibilityId("Allow");
 	MobileBy languageVC = (MobileBy) MobileBy.AccessibilityId("LanguageVC");
@@ -16,6 +19,9 @@ public class Onboarding {
 	public Onboarding(AppiumDriver<MobileElement> driver) {
 		this.driver = (IOSDriver<MobileElement>) driver;
 	}
+	
+	
+	// Following are the methods to interact with the page
 	
 	public void tapDone() {
 		driver.findElement(donebutton).click();
